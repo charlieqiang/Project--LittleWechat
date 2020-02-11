@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="row-container">
+  <view class="content-wrapper">
+    <block wx:for="{{animationList}}" wx:key="avid">
+      <!-- 使用热门推荐模板，传入当前循环对象item -->
+      <template is="jiefItem1" data="{{...item}}"/>
+    </block>
+  </view>
+</view>

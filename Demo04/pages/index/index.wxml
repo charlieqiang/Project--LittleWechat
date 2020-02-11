@@ -1,0 +1,15 @@
+<!--pages/index/index.wxml-->
+<view bindtap="bindViewTap" class='list'>
+  <image class='poster' src='../../imgs/icon_index_HL.png'></image>
+    <view class='info'>
+      <view class='title'>
+        第一个视频
+      </view>
+      <view class='dscrb'>
+        描述
+      </view>
+      <view class='others'>
+          <text>678人已观看 · 2-11</text>
+      </view>
+    </view>
+</view>

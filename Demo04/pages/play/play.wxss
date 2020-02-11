@@ -1,0 +1,10 @@
+/* pages/play/play.wxss */
+.show {
+  border:2px solid #fff; 
+  display:flex; 
+  justify-content:center; 
+  align-items:center;
+}
+.show .myVideo{
+  border:2px solid #fff; 
+}
