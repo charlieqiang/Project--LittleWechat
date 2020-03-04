@@ -7,9 +7,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#f92206",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "龙虎传奇",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#000000",
