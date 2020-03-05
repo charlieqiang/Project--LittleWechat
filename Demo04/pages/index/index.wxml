@@ -1,15 +1,20 @@
 <!--pages/index/index.wxml-->
-<view bindtap="bindViewTap" class='list'>
-  <image class='poster' src='../../imgs/icon_index_HL.png'></image>
-    <view class='info'>
-      <view class='title'>
-        第一个视频
-      </view>
-      <view class='dscrb'>
-        描述
-      </view>
-      <view class='others'>
-          <text>678人已观看 · 2-11</text>
+<view class="doc-container">
+  <view class="doc-title">视频库</view>
+  <block wx:for="{{vedioList}}">
+    <view bindtap="bindViewTap" class='list'>
+      <image class='poster' src='../../imgs/icon_index_HL.png'></image>
+      <view class='info'>
+        <view class='title'>
+          {{item.title}}
+        </view>
+        <view class='dscrb'>
+          {{item.right}}
+        </view>
+        <view class='others'>
+          <text>{{item.num}}人已观看 · {{item.date}}</text>
+        </view>
       </view>
     </view>
+  </block>
 </view>

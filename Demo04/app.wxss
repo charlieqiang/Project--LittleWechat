@@ -3,7 +3,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  /* min-height: 99%; */
   justify-content: space-between;
 }
 .page-header {
@@ -222,3 +222,19 @@ checkbox, radio{
     padding-left: 0;
     padding-right: 0;
 }
+
+/* 这是公用的列表头部样式 *****START******/
+.doc-container {
+  overflow: hidden;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.doc-title {
+  position: relative;
+  margin: 10px 15px;
+  line-height: 25px;
+  font-size: 20px;
+  color: #666;
+}
+/* 这是公用的列表头部样式 *****END******/
