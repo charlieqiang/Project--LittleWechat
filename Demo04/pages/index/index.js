@@ -59,6 +59,10 @@ Page({
       })
     }
     if (that.data.userRight=='svip'){
+      wx.showToast({
+        title: '权限满足',
+        duration: 3000
+      })
       wx.navigateTo({
         url: '../play/play',
       })
