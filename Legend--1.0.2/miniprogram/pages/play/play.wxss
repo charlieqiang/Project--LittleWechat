@@ -1,0 +1,11 @@
+/* pages/play/play.wxss */
+.show {
+  background: pink;
+  display:flex; 
+  justify-content:center; 
+  align-items:center;
+}
+.show .myVideo{
+  width: 750rpx;
+  height: 500rpx;
+}

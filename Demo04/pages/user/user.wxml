@@ -35,6 +35,11 @@
   </block>
   <block wx:else>
     <view class="weui-cells__title">个人信息</view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="placeholder">weui</view>
+      </view>
+    </view>
     <view class="userinfo">
       <view class="userinfo-avatar">
         <open-data type="userAvatarUrl"></open-data>

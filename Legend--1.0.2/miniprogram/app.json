@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/play/play"
+
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "龙虎传奇",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#d81e06",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "传奇服务",
+        "iconPath": "images/icon_index.png",
+        "selectedIconPath": "images/icon_index_HL.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "images/icon_user.png",
+        "selectedIconPath": "images/icon_user_HL.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

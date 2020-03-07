@@ -1,6 +1,0 @@
-{
-  "enablePullDownRefresh": true,
-  "usingComponents": {
-    "xiaoceItem": "/components/indexItem/indexItem"
-  }
-}

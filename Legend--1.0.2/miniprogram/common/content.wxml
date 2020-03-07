@@ -1,0 +1,15 @@
+<template name="content">
+  <view class="page">
+    <view class="page-title">{{title}}</view>
+    <scroll-view scroll-x="true">
+      <block wx:for="{{3}}">
+        <view class="course" catchtap="jump">
+          <image class="coursePPT" src="./shoes.jpeg">
+          </image>
+          <text class="courseDscp">两秒钟成为操盘手</text>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="page-footer"></view>
+  </view>
+</template>

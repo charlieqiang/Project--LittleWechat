@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<import src="../../common/content.wxml" />
+<import src="../../common/teacher.wxml" />
+
+<swiper class='swiperClass' autoplay indicator-dots interval="3000" duration="2000" previous-margin="30px" next-margin="30px" circular bindchange="bindchange" style='height: {{swiperHeight}}px'>
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : 'quiet'}}" mode='aspectFill'>
+      </image>
+    </swiper-item>
+  </block>
+</swiper>
+<template is="teacher" data="{{title: '入驻讲师'}}" />
+<template is="content" data="{{title: '免费试听'}}" />
+<template is="content" data="{{title: '精选课程'}}" />
