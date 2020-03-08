@@ -1,11 +1,103 @@
 /* pages/play/play.wxss */
-.show {
+
+.video {
   background: pink;
-  display:flex; 
-  justify-content:center; 
-  align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.show .myVideo{
+
+.myVideo {
   width: 750rpx;
   height: 500rpx;
 }
+
+.videoContent {
+  padding: 10rpx;
+  /* background: pink; */
+}
+
+.videoRight {
+  float: left;
+  color: white;
+  padding-left: 16rpx;
+  padding-right: 16rpx;
+  padding-top: 7rpx;
+  padding-bottom: 7rpx;
+  margin: 0rpx 0rpx;
+  font-size: 12px;
+  border-radius: 2px;
+  background: rgb(160, 13, 38);
+}
+
+.videoTitle {
+  float: left;
+  margin-left: 20rpx;
+  color: rgb(75, 75, 75);
+}
+
+.InterTitle {
+  /* background: olive; *//* padding: 10rpx; */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.DscpTitle {
+  /* background: pink; */
+  text-align: center;
+  font-weight: bold;
+  padding: 10rpx;
+  margin: 10rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.commentTitle {
+  float: left;
+  width: fit-content;
+  /* background: pink; */
+  text-align: center;
+  padding: 10rpx;
+  margin: 10rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.myTitle {
+  width: fit-content;
+  /* background: pink; */
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid black;
+}
+
+.videoDscp{
+  /* background: pink; */
+  width: 650rpx;
+
+  padding: 50rpx;
+  font-size: 35rpx;
+  color: rgb(75, 75, 75);
+}
+
+.scrollContent{
+  margin-bottom: 100rpx;
+}
+
+.videoFooter {
+  border-top:  1rpx solid rgba(0, 0, 0, 0.116);
+  background: rgb(228, 228, 228);
+  text-align: center;
+  font-size: 31rpx;
+  font-weight: bold;
+  padding: 30rpx 0rpx;
+  margin-top: 20rpx;
+  color: rgb(109, 109, 109);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+

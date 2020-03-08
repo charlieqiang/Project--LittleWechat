@@ -1,21 +1,38 @@
 <!--pages/play/play.wxml-->
-<view class="show" >
-  <video class="myVideo" 
-    src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400">
+<view class="video">
+  <video class="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400">
   </video>
- 
+
 </view>
- <view class="videoContent">
+<view class="videoContent">
   <view class="videoRight">
-    vip
+    svip
   </view>
   <view class="videoTitle">
-    两秒变成操盘手
+    第一课：两秒变成操盘手
   </view>
 </view>
-<view class="showDscp">
-哈哈哈哈啊哈哈哈哈哈
+<view class="InterTitle">
+  <view class="DscpTitle">
+    <text class="myTitle">课程描述
+    </text>
+  </view>
+  <view class="commentTitle">
+    <navigator url="../room/room" open-type="navigate" class="myTitle">
+      <text>课程交流</text>
+    </navigator>
+  </view>
+
 </view>
-<view class="showFooter">
-已参加155人参加学习
+<scroll-view scroll-y="true" class="videoDscp">
+  <view class="scrollContent">
+    <rich-text>
+      哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈 哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈
+    </rich-text>
+
+  </view>
+</scroll-view>
+
+<view class="videoFooter">
+  已有155人参加学习
 </view>

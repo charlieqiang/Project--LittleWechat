@@ -8,7 +8,7 @@
   margin-top: 20rpx;
   /* background-color: pink; */
 }
-.page-footer{
+.page-body{
   border-bottom: 1rpx solid rgb(204, 202, 202);
 }
 .userinfo {

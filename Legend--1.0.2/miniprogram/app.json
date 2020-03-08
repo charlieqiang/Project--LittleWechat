@@ -1,8 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/user/user",
-    "pages/play/play"
+    "pages/play/play",
+    "pages/room/room",
+    "pages/utils/utils",
+    "pages/user/user"
+
 
   ],
   "window": {

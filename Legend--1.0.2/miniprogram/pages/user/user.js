@@ -1,6 +1,6 @@
 //user.js
 const app = getApp()
-
+var utils = require('../utils/utils.js');
 Page({
   
   data: {
@@ -55,8 +55,9 @@ Page({
       name: 'login',
       data: {},
       success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
-        app.globalData.openid = res.result.openid
+        console.log('[云函数] [login] user openid: ', res.result.openid);
+        app.globalData.openid = res.result.openid;
+        
         // wx.navigateTo({
         //   url: '../user/user',
         // })
@@ -68,6 +69,15 @@ Page({
         // })
       }
     })
+
+    if (!utils.queryRight()) {
+      var checkRes = utils.addRight();
+      console.log("add" + checkRes);
+    }
   },
+
+
+
+
 
 })
