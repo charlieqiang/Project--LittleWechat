@@ -6,16 +6,13 @@
   </view>
   <view class="userinfo-nickName">
     <text>{{userInfo.nickName}}</text>
-    <a bindtap="onGetOpenid" class="userinfo-loginbtn">登录</a>
+    <a bindtap="loginController" class="userinfo-loginbtn">登录</a>
   </view>
 </view>
 <view class="userItem">
   <view class="weui-flex">
-    <view class="weui-flex__item">
+    <view class="weui-flex_item">
       <view class="beginPlaceholder">我的等级：{{userRight}}
-
-      </view>
-      <view class="endPlaceholder">邀请码：{{userTicket}}
 
       </view>
       <view class="beginPlaceholder">我的收藏</view>

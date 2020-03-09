@@ -1,4 +1,4 @@
-<template name="teacher">
+<!-- <template name="teacher">
   <view class="page">
     <view class="page-header"></view>
     <view class="page-title">{{title}}</view>
@@ -34,4 +34,4 @@
 
     <view class="page-footer"></view>
   </view>
-</template>
+</template> -->

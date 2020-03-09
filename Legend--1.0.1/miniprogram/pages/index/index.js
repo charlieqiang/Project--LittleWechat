@@ -52,8 +52,9 @@ Page({
       name: 'login',
       data: {},
       success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.userRight)
+        console.log('[云函数] [login] user openid: ', res)
         app.globalData.openid = res.result.openid
+        console.log(app.globalData.openid)
         wx.navigateTo({
           url: '../userConsole/userConsole',
         })

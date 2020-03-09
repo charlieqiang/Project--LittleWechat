@@ -1,7 +1,8 @@
 //app.js
+var common_js = require('pages/utils/utils.js')
 App({
   onLaunch: function () {
-    
+
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -16,6 +17,18 @@ App({
     }
 
     this.globalData = {
+      userRight: 'level-1',
+      userOpenid: '',
+      userInfo: {
+        avatarUrl: './user-unlogin.png',
+        nickName: "id_1568",
+      },
+      userTicket: '548DECFSA',
     }
+  },
+  func: {
+    getUserOpenid: common_js.getUserOpenid,
+    queryRight: common_js.queryRight,
+    addRight: common_js.addRight
   }
 })
