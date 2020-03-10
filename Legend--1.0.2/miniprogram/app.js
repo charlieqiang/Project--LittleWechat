@@ -1,8 +1,7 @@
 //app.js
-var common_js = require('pages/utils/utils.js')
+
 App({
   onLaunch: function () {
-
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -25,10 +24,18 @@ App({
       },
       userTicket: '548DECFSA',
     }
+
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        //console.log('[云函数] [login] res: ', res)
+        this.globalData.userOpenid = res.result.openid
+      },
+      fail: err => {
+        console.error('[云函数] [login] 调用失败', err)
+      }
+    })
   },
-  func: {
-    getUserOpenid: common_js.getUserOpenid,
-    queryRight: common_js.queryRight,
-    addRight: common_js.addRight
-  }
+
 })

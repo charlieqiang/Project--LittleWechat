@@ -5,15 +5,19 @@
     </image>
   </view>
   <view class="userinfo-nickName">
-    <text>{{userInfo.nickName}}</text>
-    <a bindtap="loginController" class="userinfo-loginbtn">登录</a>
+    <text class="nickName">{{userInfo.nickName}}</text>
   </view>
+  <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-loginbtn" style="height: 100rpx;width: 160rpx;">
+    <view class="userinfo-loginbtnView">
+      登录
+    </view>
+  </button>
 </view>
 <view class="userItem">
   <view class="weui-flex">
     <view class="weui-flex_item">
-      <view class="beginPlaceholder">我的等级：{{userRight}}
-
+      <view bindtap="loginController" class="beginPlaceholder">我的等级：{{userRight}}
+        <text class="renewBtn">更新</text>
       </view>
       <view class="beginPlaceholder">我的收藏</view>
       <view class="endPlaceholder">历史记录</view>

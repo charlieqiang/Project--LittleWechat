@@ -1,14 +1,28 @@
 <!--index.wxml-->
-<import src="../../common/content.wxml" />
-
-<swiper class='swiperClass' autoplay indicator-dots interval="3000" duration="2000" previous-margin="30px" next-margin="30px" circular bindchange="bindchange" style='height: {{swiperHeight}}px'>
-  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
-    <swiper-item>
-      <image class="slide-image {{swiperIndex == index ? 'active' : 'quiet'}}" mode='aspectFill' src="{{item}}">
-      </image>
-    </swiper-item>
+<view class="page">
+  <swiper class='welcomeSwiper' autoplay indicator-dots interval="3000" duration="2000" previous-margin="60rpx" next-margin="60rpx" circular bindchange="bindchange">
+    <block wx:for="{{welImgUrl}}" wx:key="index">
+      <swiper-item id="{{index}}">
+        <image class="slide-image {{swiperIndex == index ? 'active' : 'quiet'}}" mode='aspectFill' src="{{item}}">
+        </image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="page-title">视频库</view>
+  <block wx:for="{{courseMsgUrl}}" wx:key="index">
+    <view bindtap="jump" class='courselist'>
+      <image class='poster' src='./shoes.jpeg'></image>
+      <view class='info'>
+        <view class='title'>
+          {{item.title}}
+        </view>
+        <view class='dscrb'>
+          {{item.right}}
+        </view>
+        <view class='others'>
+          <text>{{item.num}}人已观看 · {{item.date}}</text>
+        </view>
+      </view>
+    </view>
   </block>
-</swiper>
-
-<template is="content" data="{{title: '免费试听'}}" />
-<template is="content" data="{{title: '精选课程'}}" />
+</view>

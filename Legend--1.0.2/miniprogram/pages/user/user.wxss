@@ -7,16 +7,17 @@ image {
 
 .userinfo {
   position: relative;
-  /* width: 750rpx;  
-  height: 320rpx;   */
+  width: 750rpx;
+  height: 400rpx;
+  /* background: orange; */
   color: #999;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 100rpx;
+  /* align-items: center; *//* margin-bottom: 100rpx; */
 }
 
 .userinfo-avatar {
+  align-self: center;
   overflow: hidden;
   display: block;
   width: 160rpx;
@@ -30,17 +31,34 @@ image {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
+.userinfo-nickName {
+  align-self: center;
+  /* background: pink; */
+}
+
 .userinfo-loginbtn {
-  position: absolute;
+  /* background: pink; */
+  /* position: absolute; */
+  margin-top: 20rpx;
+  padding-left: 32rpx;
+  /* align-content: center; */
+}
+
+.button-hover {
+  background: none;
+}
+
+.userinfo-loginbtnView {
+  /* align-self: center; */
+  color: rgb(100, 100, 100);
   background-color: #ebebeb;
-  text-align: center;
   height: 37rpx;
   width: 80rpx;
   padding: 5rpx 10rpx;
-  margin: 0rpx 20rpx;
   font-size: 12px;
   border-radius: 2px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+
 }
 
 .userItem {
@@ -62,6 +80,10 @@ image {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   flex: 1;
+}
+
+.renewBtn{
+  float: right;
 }
 
 .beginPlaceholder {

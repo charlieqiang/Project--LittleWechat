@@ -2,16 +2,17 @@
 const app = getApp()
 
 Page({
-  // data: {
-  //   swiperItem: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
-  //   indicatorDots: true,
-  //   vertical: false,
-  //   autoplay: false,
-  //   interval: 3000,
-  //   duration: 2000
-  // },
   data: {
-    imgUrls: [
+    page: 1,
+    courseMsgUrl: [
+      {
+        'title': "解套必胜",
+        'right': "vip",
+        'num': "678",
+        'date': "03-05"
+      }
+    ],
+    welImgUrl: [
       './shoes.jpeg',
       './shoes.jpeg',
       './shoes.jpeg',
