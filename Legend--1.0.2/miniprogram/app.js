@@ -1,7 +1,19 @@
 //app.js
 
 App({
+
+  globalData: {
+    userOpenid: '',
+    userRight: 'level-1',
+    userInfo: {
+      avatarUrl: './user-unlogin.png',
+      nickName: "id_1568",
+    },
+    userTicket: '548DECFSA',
+  },
+
   onLaunch: function () {
+    var that = this;
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -15,27 +27,45 @@ App({
       })
     }
 
-    this.globalData = {
-      userRight: 'level-1',
-      userOpenid: '',
-      userInfo: {
-        avatarUrl: './user-unlogin.png',
-        nickName: "id_1568",
-      },
-      userTicket: '548DECFSA',
-    }
-
     wx.cloud.callFunction({
-      name: 'login',
+      
+      name: 'getUserOpenid',
       data: {},
-      success: res => {
-        //console.log('[云函数] [login] res: ', res)
-        this.globalData.userOpenid = res.result.openid
+      success: getUserOpenidRes => {
+        
+        wx.cloud.callFunction({
+          name: 'dbHelper',
+          data: {
+            type: 'query',
+            userOpenid: getUserOpenidRes.result.userOpenid
+          }, success: function (queryRes) {
+            if (queryRes.result.data.length==0){
+              wx.cloud.callFunction({
+                name: 'dbHelper',
+                data: {
+                  type: 'add',
+                  userOpenid: getUserOpenidRes.result.userOpenid
+                }, success: function (addRes) {
+                  that.globalData.userOpenid = getUserOpenidRes.result.userOpenid
+                  that.globalData.userRight = 'vip'
+                }, fail: function (addRes) {
+                  console.log(addRes)
+                }
+              })
+            }else{
+              that.globalData.userOpenid = getUserOpenidRes.result.userOpenid
+              that.globalData.userRight = queryRes.result.data[0].userRight
+            }
+          }, fail: function (queryRes) {
+            console.log(queryRes)
+          }
+        })
+
       },
       fail: err => {
-        console.error('[云函数] [login] 调用失败', err)
+        console.error('[云函数] [getUserOpenid] 调用失败', err)
       }
     })
   },
-
 })
+

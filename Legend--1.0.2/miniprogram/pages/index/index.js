@@ -4,14 +4,12 @@ const app = getApp()
 Page({
   data: {
     page: 1,
-    courseMsgUrl: [
-      {
-        'title': "解套必胜",
-        'right': "vip",
-        'num': "678",
-        'date': "03-05"
-      }
-    ],
+    courseMsgUrl: [{
+      'title': "解套必胜",
+      'right': "svip",
+      'num': "678",
+      'date': "03-05"
+    }],
     welImgUrl: [
       './shoes.jpeg',
       './shoes.jpeg',
@@ -27,12 +25,13 @@ Page({
     })
   },
 
-  jump: function(){
-    wx.navigateTo({
-      url: '../play/play',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+  jump: function() {
+    
+    wx.showModal({
+      title: '权限不足',
+      content: '请联系管理员开通svip',
+      showCancel: false,
+      success: function (res) { },
     })
   }
 

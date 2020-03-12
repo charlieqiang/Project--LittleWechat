@@ -16,7 +16,7 @@
 <view class="userItem">
   <view class="weui-flex">
     <view class="weui-flex_item">
-      <view bindtap="loginController" class="beginPlaceholder">我的等级：{{userRight}}
+      <view bindtap="getUserRight" class="beginPlaceholder">我的等级：{{userRight}}
         <text class="renewBtn">更新</text>
       </view>
       <view class="beginPlaceholder">我的收藏</view>
