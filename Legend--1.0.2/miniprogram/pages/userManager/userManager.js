@@ -1,21 +1,24 @@
-// pages/play/play.js
+// pages/userManager/userManager.js
 const app = getApp();
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    id: '',
 
+      userOpenid: '',
+      userInfo: app.globalData.userInfo,
+      logged: false,
+      userRight: app.globalData.userRight,
+      
   },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
-    var that = this;
-    that.setData({
-      id: options.id
-    });
-    console.log(that.data.id);
+
   },
 
   /**

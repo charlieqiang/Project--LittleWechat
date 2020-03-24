@@ -1,0 +1,10 @@
+<!--pages/userManager/userManager.wxml-->
+<view class="userinfo">
+  <view class="userinfo-avatar">
+    <image src="{{userInfo.avatarUrl}}">
+    </image>
+  </view>
+  <view class="userinfo-nickName">
+    <text class="nickName">{{userInfo.nickName}}</text>
+  </view>
+</view>

@@ -10,17 +10,17 @@
   </swiper>
   <view class="page-title">视频库</view>
   <block wx:for="{{courseMsgUrl}}" wx:key="index">
-    <view bindtap="jump" class='courselist'>
-      <image class='poster' src='./shoes.jpeg'></image>
+    <view bindtap="tapItem" class='courselist'  data-para="{{item}}">
+      <image class='poster' src='{{item.url}}'></image>
       <view class='info'>
         <view class='title'>
-          {{item.title}}
+          {{item.name}}
         </view>
         <view class='dscrb'>
-          {{item.right}}
+          {{item.vright}}
         </view>
         <view class='others'>
-          <text>{{item.num}}人已观看 · {{item.date}}</text>
+          <text>{{item.watchVolume}}人已观看 · {{item.date}}</text>
         </view>
       </view>
     </view>

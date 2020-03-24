@@ -1,0 +1,40 @@
+/* pages/userManager/userManager.wxss */
+
+image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.userinfo {
+  width: 750rpx;
+  height: 250rpx;
+  /* background: orange; */
+  color: #999;
+  display: flex;
+  flex-direction: column;
+  background: pink;
+  /* align-items: center; *//* margin-bottom: 100rpx; */
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  display: block;
+  width: 90rpx;
+  height: 90rpx;
+  margin: 20rpx;
+  margin-top: 50rpx;
+  border-radius: 50%;
+  border: 1rpx solid #fff;
+  background-size: cover;
+  background-color: white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  float: left;
+  background: rgb(0, 255, 170);
+}
+
+.userinfo-nickName {
+  float: left;
+  width: 90rpx;
+  height: 90rpx;
+  background: orange;
+}

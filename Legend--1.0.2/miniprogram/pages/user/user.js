@@ -49,5 +49,14 @@ Page({
 
   },
 
+  userManager: function(){
+    wx:wx.navigateTo({
+      url: '../userManager/userManager',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  }
+
 })
 

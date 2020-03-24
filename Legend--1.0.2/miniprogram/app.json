@@ -3,9 +3,8 @@
     "pages/index/index",
     "pages/play/play",
     "pages/room/room",
-    "pages/user/user"
-
-
+    "pages/user/user",
+    "pages/userManager/userManager"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

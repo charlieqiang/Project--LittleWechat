@@ -26,5 +26,5 @@
       <view class="endPlaceholder">常见问题</view>
     </view>
   </view>
-  <view class="version">龙虎传奇版本：v1.0.2</view>
+  <view class="version" catchtap="userManager">龙虎传奇版本：v1.0.2</view>
 </view>
