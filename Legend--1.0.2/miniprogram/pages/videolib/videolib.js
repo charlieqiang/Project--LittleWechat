@@ -1,78 +1,32 @@
-//index.js
-const app = getApp()
+// pages/videolib/videolib.js
+const app = getApp();
 
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
     page: 1,
-    desp: [],
-    vipCourseMsgUrl: [],
-    svipCourseMsgUrl: [],
+    courseMsgUrl: [],
     userRight: app.globalData.userRight,
-    welImgUrl: [],
-    swiperIndex: 0 //这里不写第一次启动展示的时候会有问题
   },
 
-  onShow: function() {
-    this.setData({
-      userRight: app.globalData.userRight,
-    })
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+
     var that = this;
-    this.getvipCourseMsgUrl(that.data.page);
-    this.getsvipCourseMsgUrl(that.data.page);
-    this.getImgUrl();
-    this.getDesp();
-  },
-
-  bindchange(e) {
-    this.setData({
-      swiperIndex: e.detail.current
+    that.setData({
+      lib: options.lib,
     })
-  },
+    if ('vip' == options.lib) {
+      this.getvipCourseMsgUrl(that.data.page);
+    } else if ('svip' == options.lib) {
+      this.getsvipCourseMsgUrl(that.data.page);
+    }
 
-  gotoslib: function() {
-    wx: wx.navigateTo({
-      url: '../videolib/videolib?lib=svip',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
-    })
-  },
-
-  gotolib: function() {
-    wx: wx.navigateTo({
-      url: '../videolib/videolib?lib=vip',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
-    })
-  },
-
-  getDesp: function() {
-    var that = this
-    wx.request({
-      url: 'https://api.spe.kim/vdMa/ApiController?type=desp',
-      method: 'get',
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function(res) {
-        var res = res.data;
-        // console.log(res)
-        that.setData({
-          desp: res.desp,
-        })
-      },
-
-      fail: function() {
-        wx.showToast({
-          title: '服务器异常',
-          duration: 1500
-        })
-      },
-      complete: function() {
-        wx.hideLoading()
-      }
-    })
   },
 
   getvipCourseMsgUrl: function(page) {
@@ -83,7 +37,7 @@ Page({
     }
     var that = this
     wx.request({
-      url: 'https://api.spe.kim/vdMa/ApiController?type=video&right=vip&pageNow=1&pageSize=3',
+      url: 'https://api.spe.kim/vdMa/ApiController?type=video&right=vip&pageNow=' + that.data.page + '&pageSize=10',
       method: 'get',
       header: {
         'content-type': 'application/json'
@@ -93,16 +47,16 @@ Page({
         if ((that.data.page > 1) && (res != "")) {
           var feedTemp = that.data.courseMsgUrl;
           that.setData({
-            vipCourseMsgUrl: feedTemp.concat(res),
-            // page: page + 1
+            courseMsgUrl: feedTemp.concat(res),
+            page: page + 1
           })
           //console.log(res);
         } else if (res == "") {
 
         } else {
           that.setData({
-            vipCourseMsgUrl: res,
-            // page: page + 1
+            courseMsgUrl: res,
+            page: page + 1
           })
           //console.log(res);
         }
@@ -114,14 +68,20 @@ Page({
           duration: 1500
         })
       },
+
       complete: function() {
-        wx.hideLoading()
+        if (page >= 1) {
+          wx.hideLoading()
+        } else {
+          //wx.stopPullDownRefresh()
+        }
       }
     })
   },
 
   //
   getsvipCourseMsgUrl: function(page) {
+    var that = this
     if (page == 1) {
       wx.showLoading({
         title: '加载中',
@@ -129,29 +89,26 @@ Page({
     }
     var that = this
     wx.request({
-      url: 'https://api.spe.kim/vdMa/ApiController?type=video&right=svip&pageNow=1&pageSize=3',
+      url: 'https://api.spe.kim/vdMa/ApiController?type=video&right=svip&pageNow=' + that.data.page + '&pageSize=10',
       method: 'get',
       header: {
         'content-type': 'application/json'
       },
       success: function(res) {
-        wx.showLoading({
-          title: '加载更多',
-        })
         var res = res.data;
         if ((that.data.page > 1) && (res != "")) {
           var feedTemp = that.data.courseMsgUrl;
           that.setData({
-            svipCourseMsgUrl: feedTemp.concat(res),
-            // page: page + 1
+            courseMsgUrl: feedTemp.concat(res),
+            page: page + 1
           })
           //console.log(res);
         } else if (res == "") {
 
         } else {
           that.setData({
-            svipCourseMsgUrl: res,
-            // page: page + 1
+            courseMsgUrl: res,
+            page: page + 1
           })
           //console.log(res);
         }
@@ -163,38 +120,13 @@ Page({
           duration: 1500
         })
       },
-      complete: function() {
-        wx.hideLoading()
-      }
-    })
-  },
 
-  //
-  getImgUrl: function(page) {
-    var that = this
-    wx.request({
-      url: 'https://api.spe.kim/vdMa/ApiController?type=img',
-      method: 'get',
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function(res) {
-        wx.showLoading({
-          title: '加载更多',
-        })
-        var res = res.data;
-        that.setData({
-          welImgUrl: res,
-        })
-      },
-      fail: function() {
-        wx.showToast({
-          title: '服务器异常',
-          duration: 1500
-        })
-      },
       complete: function() {
-        wx.hideLoading()
+        if (page >= 1) {
+          wx.hideLoading()
+        } else {
+          //wx.stopPullDownRefresh()
+        }
       }
     })
   },
@@ -281,4 +213,46 @@ Page({
 
   },
 
+
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+    this.setData({
+      userRight: app.globalData.userRight,
+    })
+  },
+
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
+    var that = this;
+    wx.showLoading({
+      title: '加载更多',
+    })
+
+    if ('vip' == that.data.lib) {
+      this.getvipCourseMsgUrl(that.data.page);
+    } else if ('svip' == that.data.lib) {
+      this.getsvipCourseMsgUrl(that.data.page);
+    }
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
+
+  }
 })

@@ -1,0 +1,25 @@
+<!--pages/videolib/videolib.wxml-->
+<view class="page-title">
+<block wx:if="{{lib=='svip'}}">
+热门精选
+</block>
+<block wx:if="{{lib=='vip'}}">
+免费专区
+</block>
+</view>
+<block wx:for="{{courseMsgUrl}}" wx:key="index">
+  <view bindtap="tapItem" class='courselist' data-para="{{item}}">
+    <image class='poster' src='{{item.url}}'></image>
+    <view class='info'>
+      <view class='title'>
+        {{item.name}}
+      </view>
+      <view class='dscrb'>
+        {{item.vright}}
+      </view>
+      <view class='others'>
+        <text>{{item.watchVolume}}人已学习 · {{item.date}}</text>
+      </view>
+    </view>
+  </view>
+</block>

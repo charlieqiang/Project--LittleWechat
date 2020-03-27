@@ -12,6 +12,7 @@ exports.main = async (event, context) => {
       return await db.collection('legendUsers').add({
         data: {
           userOpenid: event.userOpenid,
+          userCode: event.userCode,
           userRight: 'vip'
         }
       })
@@ -24,6 +25,18 @@ exports.main = async (event, context) => {
       return await db.collection('legendUsers').where({
         userOpenid: event.userOpenid
       }).get()
+    } catch (e) {
+      console.log(e)
+    }
+  } else if (event.type == 'update') {
+    try {
+      return await db.collection('legendUsers').where({
+        userCode: event.userCode
+      }).update({
+        data: {
+          userRight: event.userRight
+        }
+        })
     } catch (e) {
       console.log(e)
     }

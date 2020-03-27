@@ -2,17 +2,18 @@
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"enhance": true,
+		"urlCheck": true,
+		"es6": false,
+		"enhance": false,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
 		"nodeModules": true,
 		"autoAudits": true,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": true,
+		"showShadowRootInWxmlPanel": false,
+		"scopeDataCheck": false,
+		"uglifyFileName": true,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -21,15 +22,14 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"uglifyFileName": true,
-		"bundle": true
+		"bundle": false
 	},
 	"appid": "wx11fe45deb21ef577",
 	"projectname": "Legend--1.0.2",
 	"libVersion": "2.8.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
-	"compileType": "plugin",
+	"compileType": "miniprogram",
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
@@ -54,6 +54,20 @@
 					"id": 1,
 					"name": "pages/userManager/userManager",
 					"pathName": "pages/userManager/userManager",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/userDetail/userDetail",
+					"pathName": "pages/userDetail/userDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/user",
+					"pathName": "pages/user/user",
 					"scene": null
 				}
 			]

@@ -1,5 +1,4 @@
 /* pages/play/play.wxss */
-
 .video {
   background: pink;
   display: flex;

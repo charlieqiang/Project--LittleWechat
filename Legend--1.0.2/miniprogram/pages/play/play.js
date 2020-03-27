@@ -13,9 +13,13 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      id: options.id
+      id: options.id,
+      name: options.name,
+      vright: options.vright,
+      descp: options.descp,
+      watchVolume: options.watchVolume
     });
-    console.log(that.data.id);
+    // console.log(that.data);
   },
 
   /**

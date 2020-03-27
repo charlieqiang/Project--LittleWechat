@@ -2,15 +2,16 @@
   "pages": [
     "pages/index/index",
     "pages/play/play",
-    "pages/room/room",
     "pages/user/user",
-    "pages/userManager/userManager"
+    "pages/userManager/userManager",
+    "pages/userDetail/userDetail",
+    "pages/videolib/videolib"
   ],
-  "window": {
+  "window": { 
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "龙虎传奇",
+    "navigationBarTitleText": "龙头战法悟道阁",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -19,7 +20,7 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "传奇服务",
+        "text": "龙头战法",
         "iconPath": "images/icon_index.png",
         "selectedIconPath": "images/icon_index_HL.png"
       },

@@ -6,10 +6,10 @@
 </view>
 <view class="videoContent">
   <view class="videoRight">
-    svip
+    {{vright}}
   </view>
   <view class="videoTitle">
-    第一课：两秒变成操盘手
+    {{name}}
   </view>
 </view>
 <view class="InterTitle">
@@ -17,22 +17,16 @@
     <text class="myTitle">课程描述
     </text>
   </view>
-  <view class="commentTitle">
-    <navigator url="../room/room" open-type="navigate" class="myTitle">
-      <text>课程交流</text>
-    </navigator>
-  </view>
-
 </view>
 <scroll-view scroll-y="true" class="videoDscp">
   <view class="scrollContent">
     <rich-text>
-      哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈 哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈
+      {{descp}}
     </rich-text>
 
   </view>
 </scroll-view>
 
 <view class="videoFooter">
-  已有155人参加学习
+  已有{{watchVolume}}人参加学习
 </view>

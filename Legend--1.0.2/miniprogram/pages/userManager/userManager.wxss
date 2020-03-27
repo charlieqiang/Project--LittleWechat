@@ -1,8 +1,8 @@
 /* pages/userManager/userManager.wxss */
-
+@import "../../common/common.wxss";
 image {
-  width: 90rpx;
-  height: 90rpx;
+  width: 70rpx;
+  height: 70rpx;
 }
 
 .userinfo {
@@ -17,24 +17,115 @@ image {
 }
 
 .userinfo-avatar {
-  overflow: hidden;
   display: block;
-  width: 90rpx;
-  height: 90rpx;
+  width: 70rpx;
+  height: 70rpx;
   margin: 20rpx;
-  margin-top: 50rpx;
+  margin-left: 50rpx;  
   border-radius: 50%;
   border: 1rpx solid #fff;
   background-size: cover;
   background-color: white;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-  float: left;
   background: rgb(0, 255, 170);
 }
 
 .userinfo-nickName {
-  float: left;
-  width: 90rpx;
-  height: 90rpx;
-  background: orange;
+
+  text-align: center;
+  width: 160rpx;
+  height: 50rpx;
+  /* background: orange; */
+}
+
+
+.table {
+  border: 0px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+.tdnum {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+}
+.td {
+    width:60%;
+    justify-content: center;
+    text-align: left;
+}
+
+.bg-w{
+  background: snow;
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.thnum {
+  width: 40%;
+  justify-content: center;
+  background: #3366FF;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+.th {
+  width: 60%;
+  justify-content: center;
+  background: #3366FF;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+/* homeicon */
+.inaver._30f2b4d {
+  box-sizing: border-box;
+  padding-top: 44rpx;
+  width: 100vw;
+  height: 160rpx;
+  display: flex;
+  position: fixed;
+  z-index: 5000;
+  top: 0;
+  left: 0;
+}
+ 
+.inaver .left._30f2b4d {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 8rpx;
+}
+ 
+.inaver .left image.icon._30f2b4d {
+  width: 60rpx;
+  height: 60rpx;
+  padding: 10rpx;
+  margin: 10rpx;
+}
+ 
+.inaver .center._30f2b4d {
+  height: 100rpx;
+  line-height: 100rpx;
+  flex: 1;
+  margin: 8rpx;
+}
+ 
+.inaver .right._30f2b4d {
+  width: 240rpx;
+  height: 100rpx;
+  margin: 8rpx;
+}
+ 
+.protect-inaver._30f2b4d {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 120rpx;
+
 }

@@ -1,0 +1,50 @@
+/* pages/videolib/videolib.wxss */
+.page-title {
+  padding: 20rpx;
+  padding-top: 0rpx;
+  color: rgb(92, 92, 92);
+  font-weight: 500;
+  margin-top: 20rpx;
+}
+
+.courselist {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #efefef;
+  padding: 20rpx 30rpx;
+  /* background: #fff; */
+}
+
+.info {
+  height: 150rpx;
+  flex: 1;
+  padding: 8rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.poster {
+  width: 200rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+  box-shadow: 3px 4px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 30rpx;
+  font-weight: 700;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.dscrb {
+  font-size: 24rpx;
+}
+
+.others {
+  font-size: 22rpx;
+  color: #9999;
+}

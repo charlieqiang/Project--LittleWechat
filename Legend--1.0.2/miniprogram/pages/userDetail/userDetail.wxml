@@ -1,0 +1,30 @@
+<!--pages/userDetail/userDetail.wxml-->
+<view class="page-body">
+
+
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="page-section">
+      <view class="weui-cells__title">用户激活码</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" disabled="true" value="{{userCode}}" name="userCode" />
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">用户当前权限</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" auto-focus value="{{userRight}}" auto-focus='true' focus='true' name="userRight" />
+        </view>
+      </view>
+    </view>
+    <view class="btn-area">
+      <view>
+        <text decode="{{true}}">&nbsp;</text>
+      </view>
+      <button type="primary" formType="submit">确认</button>
+    </view>
+  </form>
+  
+</view>

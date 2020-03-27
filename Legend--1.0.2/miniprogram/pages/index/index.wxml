@@ -3,14 +3,20 @@
   <swiper class='welcomeSwiper' autoplay indicator-dots interval="3000" duration="2000" previous-margin="60rpx" next-margin="60rpx" circular bindchange="bindchange">
     <block wx:for="{{welImgUrl}}" wx:key="index">
       <swiper-item id="{{index}}">
-        <image class="slide-image {{swiperIndex == index ? 'active' : 'quiet'}}" mode='aspectFill' src="{{item}}">
+        <image class="slide-image {{swiperIndex == index ? 'active' : 'quiet'}}" mode='aspectFill' src="{{item.url}}">
         </image>
       </swiper-item>
     </block>
   </swiper>
-  <view class="page-title">视频库</view>
-  <block wx:for="{{courseMsgUrl}}" wx:key="index">
-    <view bindtap="tapItem" class='courselist'  data-para="{{item}}">
+  <view class="desp">
+    <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;{{desp}}
+  </text>
+  </view>
+  <view class="page-title">免费专区
+    <text class="renewBtn" bindtap='gotolib'>更多 » </text>
+  </view>
+  <block wx:for="{{vipCourseMsgUrl}}" wx:key="index">
+    <view bindtap="tapItem" class='courselist' data-para="{{item}}">
       <image class='poster' src='{{item.url}}'></image>
       <view class='info'>
         <view class='title'>
@@ -20,7 +26,27 @@
           {{item.vright}}
         </view>
         <view class='others'>
-          <text>{{item.watchVolume}}人已观看 · {{item.date}}</text>
+          <text>{{item.watchVolume}}人已学习 · {{item.date}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class="page-title">热门精选
+    <text class="renewBtn" bindtap='gotoslib'>更多 » </text>
+  </view>
+  <block wx:for="{{svipCourseMsgUrl}}" wx:key="index">
+    <view bindtap="tapItem" class='courselist' data-para="{{item}}">
+      <image class='poster' src='{{item.url}}'></image>
+      <view class='info'>
+        <view class='title'>
+          {{item.name}}
+        </view>
+        <view class='dscrb'>
+          {{item.vright}}
+        </view>
+        <view class='others'>
+          <text>{{item.watchVolume}}人已学习 · {{item.date}}</text>
         </view>
       </view>
     </view>

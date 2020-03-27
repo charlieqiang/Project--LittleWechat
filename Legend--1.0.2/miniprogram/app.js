@@ -1,10 +1,13 @@
 //app.js
 
+
 App({
+
 
   globalData: {
     userOpenid: '',
     userRight: 'level-1',
+    userCode: 'myCode',
     userInfo: {
       avatarUrl: './user-unlogin.png',
       nickName: "id_1568",
@@ -40,13 +43,18 @@ App({
             userOpenid: getUserOpenidRes.result.userOpenid
           }, success: function (queryRes) {
             if (queryRes.result.data.length==0){
+              var randomcode = Math.random().toString(36).substr(2).substring(0, 5);
+              var timestamp = (new Date()).valueOf();
+              var usercode = timestamp + randomcode;
               wx.cloud.callFunction({
                 name: 'dbHelper',
                 data: {
                   type: 'add',
+                  userCode: usercode,
                   userOpenid: getUserOpenidRes.result.userOpenid
                 }, success: function (addRes) {
                   that.globalData.userOpenid = getUserOpenidRes.result.userOpenid
+                  that.globalData.userCode = usercode
                   that.globalData.userRight = 'vip'
                 }, fail: function (addRes) {
                   console.log(addRes)
@@ -55,6 +63,8 @@ App({
             }else{
               that.globalData.userOpenid = getUserOpenidRes.result.userOpenid
               that.globalData.userRight = queryRes.result.data[0].userRight
+              that.globalData.userCode = queryRes.result.data[0].userCode
+              // console.log(that.globalData.userCode)
             }
           }, fail: function (queryRes) {
             console.log(queryRes)

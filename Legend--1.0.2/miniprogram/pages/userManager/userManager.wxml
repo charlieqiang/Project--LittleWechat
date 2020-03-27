@@ -1,10 +1,52 @@
 <!--pages/userManager/userManager.wxml-->
-<view class="userinfo">
-  <view class="userinfo-avatar">
-    <image src="{{userInfo.avatarUrl}}">
-    </image>
+<view class="inaver _30f2b4d" style="background:{{background}};color:{{getColor}}">
+  <view class="left _30f2b4d" catchtap="home">
+    <image class="icon _30f2b4d" src="/images/home.png" />
   </view>
-  <view class="userinfo-nickName">
-    <text class="nickName">{{userInfo.nickName}}</text>
+  <view class="center _30f2b4d">
+    <!-- 自定义区域 -->
   </view>
 </view>
+<view class="protect-inaver _30f2b4d">
+  <!-- 占据顶部位置， 伪padding板块 -->
+</view>
+<form catchsubmit="formSubmit" catchreset="formReset">
+      <view class="page-section">
+        <view class="weui-cells__title">
+          查找
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" bindchange="onSearch" name="userCode" />
+          </view>
+        </view>
+      </view>
+    </form>
+    <view class="page-section">
+      <view class="table">
+        <view class="tr bg-w">
+          <view class="thnum">序号</view>
+          <view class="th">激活码</view>
+        </view>
+        <block wx:for="{{queryResult}}" wx:key="{{index}}">
+          <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="tdnum">
+              <button size="mini" data-para="{{item}}" type="default" bindtap="onTap">{{index+1}}</button>
+            </view>
+            <view class="td">
+              <rich-text>{{item.userCode}}</rich-text>
+            </view>
+
+          </view>
+          <view class="tr" wx:else>
+            <view class="tdnum">
+              <button size="mini" data-para="{{item}}" type="default" bindtap="onTap">{{index+1}}</button>
+            </view>
+            <view class="td">
+              <rich-text>{{item.userCode}}</rich-text>
+            </view>
+          </view>
+        </block>
+
+      </view>
+    </view>

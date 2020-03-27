@@ -75,3 +75,41 @@ image.quiet {
   font-size: 22rpx;
   color: #9999;
 }
+
+.content {
+  /* background: pink; */
+  width: 100%;
+  height: fit-content;
+}
+
+.subtitle {
+  width: 100%;
+  /* background: orange; */
+}
+
+.subContent {
+  float: left;
+  width: 100%;
+}
+
+.subContent .img {
+  float: left;
+  width: 335rpx;
+  margin: 10rpx;
+  background: rgb(192, 237, 255);
+  height: 200rpx;
+}
+
+.subContent .img image{
+  width: 335rpx;
+  height: 200rpx;
+}
+
+.renewBtn{
+  float: right;
+}
+
+.desp{
+  padding: 20rpx;
+  border-bottom: 1rpx solid #9999;
+}
